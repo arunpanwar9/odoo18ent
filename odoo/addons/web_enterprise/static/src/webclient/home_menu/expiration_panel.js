@@ -48,13 +48,13 @@ export class ExpirationPanel extends Component {
     get expirationMessage() {
         const { daysLeft } = this.subscription;
         if (daysLeft <= 0) {
-            return _t("This database has expired. ");
+            return _t("");
         }
         const delay = daysLeft === 30 ? _t("1 month") : _t("%s days", daysLeft);
         if (this.subscription.expirationReason === "demo") {
-            return _t("This demo database will expire in %s. ", delay);
+            return _t("", delay);
         }
-        return _t("This database will expire in %s. ", delay);
+        return _t("", delay);
     }
 
     showRegistrationForm() {
